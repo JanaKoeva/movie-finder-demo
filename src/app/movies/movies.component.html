@@ -1,0 +1,52 @@
+<div class="row">
+  <h1>Top Rated</h1>
+  <div
+    class="col-lg-2"
+    *ngFor="let movie of topRatedMovies; let i = index"
+  >
+    <app-movie
+      [movie]="movie"
+      (clickButtonEmiter)="fromChild($event)"
+    ></app-movie>
+  </div>
+</div>
+
+<div class="row">
+  <h1>Popular movies</h1>
+  <div
+    class="col-lg-2"
+    *ngFor="let popularMovie of popularMovies; let i = index"
+  >
+    <app-movie
+      [movie]="popularMovie"
+      (clickButtonEmiter)="fromChild($event)"
+    ></app-movie>
+  </div>
+</div>
+
+<div class="row">
+  <h1>In Theatre movies</h1>
+  <div class="col-lg-2" *ngFor="let movie of inTheatreMovies">
+    <app-movie
+      [movie]="movie"
+      (clickButtonEmiter)="fromChild($event)"
+    ></app-movie>
+  </div>
+</div>
+
+<div class="row">
+  <h1>Now Playing</h1>
+  <div class="col-lg-2" *ngFor="let movie of nowPlayingMovies">
+    <app-movie
+      [movie]="movie"
+    ></app-movie>
+  </div>
+</div>
+
+<div class="row" *ngIf="message">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+    <h1>{{ message }}</h1>
+  </div>
+  <div class="col-lg-4"></div>
+</div>
