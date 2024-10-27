@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, MaybeAsync, Resolve, RouterStateSnapshot } from
 import { MovieDetails } from "../../models/MovieDetails";
 import { MovieService } from "../movie.service";
 import Movie from "../../models/Movie";
-import { Observable, map, zip } from "rxjs";
+import { Observable, forkJoin, map, zip } from "rxjs";
 
 
 @Injectable( {providedIn: 'root'})
@@ -19,8 +19,10 @@ constructor(private movieService:MovieService){}
         this.movieService.getPopularMovies(),
         this.movieService.getTopRatedMovies(),
 
-       ).pipe(
+       )
+       .pipe(
         map(([inTheatreMovies, nowPlayingMovies, popularMovies, topRatedMovies])=>{
+                      
             return[
                 ...inTheatreMovies, ...nowPlayingMovies, ...popularMovies, ...topRatedMovies
             ]

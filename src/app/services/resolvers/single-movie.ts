@@ -14,6 +14,7 @@ export class SingleMovieResolver implements Resolve<MovieDetails>{
 constructor(private movieService:MovieService){}
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
        const id=route.params['id'];
+      //  debugger
        console.log(id);
        
 

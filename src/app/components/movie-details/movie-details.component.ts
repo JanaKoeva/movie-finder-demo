@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../services/movie.service';
+import { MovieService } from '../../services/movie.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Genre, MovieDetails } from '../models/MovieDetails';
+import { Genre, MovieDetails } from '../../models/MovieDetails';
 import { NgIf } from '@angular/common';
 import { map } from 'rxjs/operators'
-import { SingleMovieResolver } from '../services/resolvers/single-movie';
+import { SingleMovieResolver } from '../../services/resolvers/single-movie';
 
 
 @Component({

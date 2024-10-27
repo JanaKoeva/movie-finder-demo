@@ -55,4 +55,10 @@ export class MovieService {
   getMovieByID(id:string){
     return this.http.get<MovieDetails>(`${BASE_URL}movie/${id}${API_KEY}`)
   }
+
+  searchMovie(query:string){
+    return this.http.get<Movie[]>(`${BASE_URL}search/movie?query=${query}&${API_KEY.slice(1)}`)
+  }
 }
+
+

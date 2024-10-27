@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Movie from '../models/Movie';
+import Movie from '../../models/Movie';
 import { RouterModule } from '@angular/router';
-import { SingleMovieResolver } from '../services/resolvers/single-movie';
+import { SingleMovieResolver } from '../../services/resolvers/single-movie';
 
 
 @Component({

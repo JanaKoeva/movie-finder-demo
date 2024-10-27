@@ -4,18 +4,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LandingComponent } from "./landing/landing.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { FootherComponent } from "./foother/foother.component";
-import { MoviesComponent } from './movies/movies.component';
+import { MoviesComponent } from './components/movies/movies.component';
 import { MovieService } from './services/movie.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SingleMovieResolver } from './services/resolvers/single-movie';
 import { MovieListResolver } from './services/resolvers/movie-list';
-
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, LandingComponent, CarouselComponent, FootherComponent, MoviesComponent,
-      HttpClientModule,
+      HttpClientModule, FormsModule
      ],
   providers: [
     MovieService, 

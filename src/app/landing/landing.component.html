@@ -1,12 +1,25 @@
 <div class="jumbotron">
-	<div class="container">
+	<div class="container" *ngIf="isLoged()">
 	  <h1>Find a movie</h1>
 	  <p>Search for a movie using the form below:</p>
-	  <form>
-		<input class="form-control input-lg" type="text" placeholder="Search" aria-label="Search">
-		<button class="btn btn-default mt-2" type="submit">Search</button>
+	  <form  #f="ngForm" (ngSubmit)="search()">
+		<input
+		appHighlight
+		[currentValue]="f.value" 
+		required
+		minlength="3"
+		name="query" 
+		class="form-control input-lg" 
+		type="text" placeholder="Search" 
+		aria-label="Search"
+		[value]=""
+		ngModel
+		>
+		<button [routerLink]="['/movies/search']" [queryParams]="{ query: 'query' }" [disabled]="f.invalid" class="btn btn-primary mt-2" type="submit">Search</button>
 	  </form>
 	</div>
- </div>
+
+	
+</div>
 
 <!-- <app-movies></app-movies> -->
